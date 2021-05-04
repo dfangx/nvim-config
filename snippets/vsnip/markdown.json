@@ -1,0 +1,28 @@
+{
+    "meta": {
+        "prefix": "meta",
+        "body": [
+            "---",
+            "title: ${1:note title}",
+            "author: ${2:Cyrus Ng}",
+            "date: ${VIM:strftime('%Y-%m-%d')}",
+            "tags: $3",
+            "---"
+        ],
+        "description": "Yaml metadata format for markdown"
+    },
+    "link": {
+        "prefix": "ln",
+        "body": [
+            "[${1:name}](${2:www.example.com})"
+        ],
+        "description": "Markdown links"
+    },
+    "images": {
+        "prefix": "img",
+        "body": [
+            "![${1:name}](${2:www.example.com/image.png})"
+        ],
+        "description": "Markdown images"
+    }
+}
