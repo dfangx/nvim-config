@@ -1,9 +1,9 @@
 [submodule "pack/completion/opt/asyncomplete-lsp.vim"]
 	path = pack/completion/opt/asyncomplete-lsp.vim
-	url = https://github.com/prabirshretha/asyncomplete-lsp.vim
+	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim
 [submodule "pack/completion/opt/asyncomplete.vim"]
 	path = pack/completion/opt/asyncomplete.vim
-	url = https://github.com/prabirshretha/asyncomplete.vim
+	url = https://github.com/prabirshrestha/asyncomplete.vim
 [submodule "pack/syntax/start/vimtex"]
 	path = pack/syntax/start/vimtex
 	url = https://github.com/lervag/vimtex
