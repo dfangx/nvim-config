@@ -15,7 +15,7 @@
 	url = https://github.com/hrsh7th/vim-vsnip-integ
 [submodule "pack/plugins/opt/vim-lsp"]
 	path = pack/plugins/opt/vim-lsp
-	url = https://github.com/prabirshretha/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp
 [submodule "pack/plugins/opt/vim-tmux-navigator"]
 	path = pack/plugins/opt/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
@@ -43,3 +43,6 @@
 [submodule "pack/writing/opt/goyo.vim"]
 	path = pack/writing/opt/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
+[submodule "pack/syntax/start/mkdx"]
+	path = pack/syntax/start/mkdx
+	url = https://github.com/SidOfc/mkdx
