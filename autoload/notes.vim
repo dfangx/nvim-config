@@ -53,7 +53,8 @@ function! notes#SearchNotesByTag(query, fullscreen) abort
         endfor
     endfunction
 
-    let cmd = 'rg -r ''$1'' --no-heading -Io -- "tags:(.*\w+)" ' . g:notes_home . ' | sed "s/ /\n/g" | sort -u | sed "/^$/d" || true'
+    let cmd ='rg --no-heading -r ''$1'' -Io -- "tags: \[((\w+)((?:,) (\w+))*)\]" ' . g:notes_home . ' | sed "s/, /\n/g" | sort -u | sed "/^\$/d" || true'
+
     let initial = cmd
     if a:query != ""
         cmd = 'rg --no-heading -Io -- "#"%s ' . g:notes_home . ' | sort -u || true'

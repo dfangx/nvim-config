@@ -6,6 +6,7 @@
             "title: ${1:note title}",
             "author: ${2:Cyrus Ng}",
             "date: ${VIM:strftime('%Y-%m-%d')}",
+            "lastmod: ${VIM:strftime('%Y-%m-%d')}",
             "tags: $3",
             "---"
         ],

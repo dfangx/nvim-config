@@ -49,7 +49,7 @@ function! plugins#SetupFzf() abort
     nnoremap <leader>fg :GFiles<cr>
     nnoremap <leader>b :Buffers<cr>
     nnoremap <leader>/ :Rg<cr>
-    nnoremap <silent> <c-]> :call fzf_tags#GetTags()<cr>
+    " nnoremap <silent> <c-]> :call fzf_tags#GetTags()<cr>
     inoremap <expr> <c-x><c-f> fzf#vim#complete#path("fd", {"options":["--select-1", "--preview", "tree {}"]})
     imap <c-x><c-l> <plug>(fzf-complete-line)
     imap <c-x><c-k> <plug>(fzf-complete-word)
@@ -151,12 +151,11 @@ endfunction
 
 function! plugins#SetupNvimLsp() abort
     packadd! nvim-lspconfig
-    lua require'lsp/setup'
+    " lua require'lsp/setup'
 endfunction
 
 function! plugins#SetupTreesitter() abort
     packadd! nvim-treesitter
-    lua require'treesitter/treesitter'
 endfunction
 
 function! plugins#SetupVimLsp() abort
@@ -232,4 +231,25 @@ function! plugins#SetupVimMarkdown() abort
     " let g:vim_markdown_conceal = 0
     " let g:vim_markdown_new_list_item_indent = 0
     " let g:vim_markdown_auto_insert_bullets = 0
+endfunction
+
+function! plugins#SetupTmuxNavigator() abort
+    packadd! vim-tmux-navigator
+endfunction
+
+function! plugins#SetupGoyo() abort
+    packadd! goyo.vim
+endfunction
+
+function! plugins#SetupPencil() abort
+    packadd! vim-pencil
+    let g:pencil#wrapModeDefault = 'soft'
+endfunction
+
+function! plugins#SetupMkdx() abort
+    let g:mkdx#settings = { 'highlight': { 'enable': 1 },
+                \ 'enter': { 'enable': 0 },
+                \ 'links': { 'external': { 'enable': 1 } },
+                \ 'toc': { 'text': 'Table of Contents', 'update_on_write': 1 },
+                \ 'fold': { 'enable': 1 } }
 endfunction

@@ -2,7 +2,8 @@
   "for": {
     "prefix": "for",
     "body": [
-      "for (${size_t} ${i} = ${1:0}; ${i} < ${2:length}; ${i}++) {",
+      "for (${size_t} ${i} = ${1:0}; ${i} < ${2:length}; ${i}++)",
+      "{",
       "\t$3",
       "}"
     ],
@@ -11,7 +12,8 @@
   "forr": {
     "prefix": "forr",
     "body": [
-      "for (int ${i} = ${1:length} - 1; ${i} >= ${2:0}; ${i}--) {",
+      "for (int ${i} = ${1:length} - 1; ${i} >= ${2:0}; ${i}--)",
+      "{",
       "\t$3",
       "}"
     ],
@@ -19,37 +21,37 @@
   },
   "do": {
     "prefix": "do",
-    "body": ["do {", "\t$1", "} while($2);"],
+    "body": ["do", "{", "\t$1", "} while($2);"],
     "description": "Code snippet for do...while loop"
   },
   "while": {
     "prefix": "while",
-    "body": ["while ($1) {", "\t$2", "}"],
+    "body": ["while ($1)", "{", "\t$2", "}"],
     "description": ""
   },
   "foreach": {
     "prefix": "foreach",
-    "body": ["for(auto ${var} : ${collection_to_loop}) {", "\t$1", "}"],
+    "body": ["for(auto ${var} : ${collection_to_loop})", "{", "\t$1", "}"],
     "description": "Code snippet for range-based for loop (c++11) statement"
   },
   "if": {
     "prefix": "if",
-    "body": ["if ($1) {", "\t$2", "}"],
+    "body": ["if ($1)", "{", "\t$2", "}"],
     "description": "Code snippet for if statement"
   },
   "else": {
     "prefix": "else",
-    "body": ["else {", "\t$1", "}"],
+    "body": ["else", "{", "\t$1", "}"],
     "description": "Code snippet for else statement"
   },
   "else if": {
     "prefix": "else if",
-    "body": ["else if ($1) {", "\t$2", "}"],
+    "body": ["else if ($1)", "{", "\t$2", "}"],
     "description": "Code snippet for else-if statement"
   },
   "enum": {
     "prefix": "enum",
-    "body": ["enum ${MyEnum} {", "\t$1", "};"],
+    "body": ["enum ${1:MyEnum}", "{", "\t$2", "};"],
     "description": "Code snippet for enum"
   },
   "enum class": {
@@ -60,24 +62,25 @@
   "class": {
     "prefix": "class",
     "body": [
-      "class ${MyClass} {",
+      "class ${1:MyClass}",
+      "{",
       "public:",
-      "\t${MyClass}();",
-      "\t${MyClass}(${MyClass} &&) = default;",
-      "\t${MyClass}(const ${MyClass} &) = default;",
-      "\t${MyClass} &operator=(${MyClass} &&) = default;",
-      "\t${MyClass} &operator=(const ${MyClass} &) = default;",
-      "\t~${MyClass}();",
+      "\t${1:MyClass}();",
+      "\t${1:MyClass}(${1:MyClass} &&) = default;",
+      "\t${1:MyClass}(const ${1:MyClass} &) = default;",
+      "\t${1:MyClass} &operator=(${1:MyClass} &&) = default;",
+      "\t${1:MyClass} &operator=(const ${1:MyClass} &) = default;",
+      "\t~${1:MyClass}();",
       "",
       "private:",
-      "\t$1",
+      "\t$2",
       "};",
       "",
-      "${MyClass}::${MyClass}()",
+      "${1:MyClass}::${1:MyClass}()",
       "{",
       "}",
       "",
-      "${MyClass}::~${MyClass}()",
+      "${1:MyClass}::~${1:MyClass}()",
       "{",
       "}"
     ],
@@ -86,7 +89,8 @@
   "classi": {
     "prefix": "classi",
     "body": [
-      "class ${MyClass} {",
+      "class ${MyClass}",
+      "{",
       "public:",
       "\t${MyClass}() = default;",
       "\t${MyClass}(${MyClass} &&) = default;",
@@ -103,12 +107,12 @@
   },
   "interface": {
     "prefix": "interface",
-    "body": ["__interface I${Interface} {", "\t$1", "};"],
+    "body": ["__interface I${Interface}", "{", "\t$1", "};"],
     "description": "Code snippet for interface (Visual C++)"
   },
   "namespace": {
     "prefix": "namespace",
-    "body": ["namespace ${MyNamespace} {", "\t$1", "}"]
+    "body": ["namespace ${MyNamespace}", "{", "\t$1", "}"]
   },
   "#ifdef": {
     "prefix": "#ifdef",
@@ -127,21 +131,23 @@
   },
   "struct": {
     "prefix": "struct",
-    "body": ["struct ${MyStruct} {", "\t$1", "};"],
+    "body": ["struct ${MyStruct}", "{", "\t$1", "};"],
     "description": "Code snippet for struct"
   },
   "switch": {
     "prefix": "switch",
-    "body": ["switch (${switch_on}) {", "default:", "\tbreak;$1", "}"],
+    "body": ["switch (${switch_on})", "{", "default:", "\tbreak;$1", "}"],
     "description": "Code snippet for switch statement"
   },
   "try": {
     "prefix": "try",
     "body": [
-      "try {",
+      "try",
+      "{",
       "\t",
       "}",
-      "catch (const std::exception&) {",
+      "catch (const std::exception&)",
+      "{",
       "\t$1",
       "}"
     ],
@@ -149,7 +155,7 @@
   },
   "union": {
     "prefix": "union",
-    "body": ["union ${MyUnion} {", "\t$1", "};"],
+    "body": ["union ${MyUnion}", "{", "\t$1", "};"],
     "description": "Code snippet for union"
   },
   "cout": {
