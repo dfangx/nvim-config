@@ -41,3 +41,7 @@ let g:tex_flavor='latex'
 let g:netrw_browsex_viewer="xdg-open"
 let g:notes_home = '~/notes'
 
+if has('termguicolors')
+    set termguicolors
+endif
+

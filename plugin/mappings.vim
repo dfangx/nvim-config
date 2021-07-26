@@ -2,12 +2,10 @@
 " KEYBINDS
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " File finding
-if empty(globpath(&rtp, '/pack/**/fzf.vim'))
-    nnoremap <leader>ff :find
-    nnoremap <leader>fs :sfind 
-    nnoremap <leader>fv :vert :sfind 
-    nnoremap <leader>ft :tabfind 
-endif
+nnoremap <leader>ff :find
+nnoremap <leader>fs :sfind 
+nnoremap <leader>fv :vert :sfind 
+nnoremap <leader>ft :tabfind 
 
 " Split lines
 nnoremap S a<cr><esc>
@@ -17,9 +15,7 @@ nnoremap <leader>o o<esc>
 " Buffer management
 nnoremap ]b :bn<cr>
 nnoremap [b :bp<cr>
-if empty(globpath(&rtp, '/pack/**/fzf.vim'))
-    nnoremap <leader>b :ls<cr>:b
-endif
+nnoremap <leader>b :ls<cr>:b
 nnoremap <leader>d :bd<cr>
 
 " Surround
