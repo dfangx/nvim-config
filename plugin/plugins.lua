@@ -6,6 +6,8 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 
+vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
+
 return require('packer').startup(function()
     use {'wbthomason/packer.nvim'}
     use {
@@ -29,7 +31,8 @@ return require('packer').startup(function()
         config = [[require'config.compe']]
     }
     use {
-        'vijaymarupudi/nvim-fzf',
+        'ibhagwan/fzf-lua',
+        requires = 'vijaymarupudi/nvim-fzf'
     }
     use {
         'hrsh7th/vim-vsnip',
@@ -54,7 +57,8 @@ return require('packer').startup(function()
     }
     use {
         'junegunn/goyo.vim',
-        ft = {'markdown'}
+        ft = {'markdown'},
+        config = [[vim.cmd(Goyo)]]
     }
     use {
         'junegunn/fzf.vim',
