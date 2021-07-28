@@ -1,4 +1,3 @@
-require'utils'
 g.vsnip_filetypes = {
     cpp = '["c"]'
 }

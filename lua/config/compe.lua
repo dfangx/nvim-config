@@ -1,4 +1,5 @@
-require'compe'.setup {
+compe = require'compe'
+compe.setup {
     enabled = true;
     autocomplete = true;
     debug = false;

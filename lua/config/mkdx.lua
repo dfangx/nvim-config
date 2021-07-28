@@ -1,4 +1,3 @@
-require'utils'
 g['mkdx#settings'] = { 
     highlight = { 
         enable = 1 

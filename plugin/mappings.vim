@@ -20,17 +20,17 @@ nnoremap <leader>d :bd<cr>
 
 " Surround
 inoremap ( ()<left>
-inoremap (; ();<left><left>
-inoremap ) ()
+inoremap <expr> ) matchstr(getline('.'), '\%' . col('.') . 'c.') == ')' ? '<right>' : ')'
 inoremap [ []<left>
-inoremap [; [];<left><left>
-inoremap ] []
+inoremap <expr> ] matchstr(getline('.'), '\%' . col('.') . 'c.') == ']' ? '<right>' : ']'
 inoremap {<cr> {<cr>}<esc>O
-inoremap {;<cr> {<cr>};<esc>O
+inoremap { {}<left>
+inoremap <expr> } matchstr(getline('.'), '\%' . col('.') . 'c.') == '}' ? '<right>' : '}'
 inoremap < <><left>
-inoremap > <>
-inoremap " ""<left>
-inoremap ' ''<left>
+inoremap <expr> > matchstr(getline('.'), '\%' . col('.') . 'c.') == '>' ? '<right>' : '>'
+inoremap <expr> " matchstr(getline('.'), '\%' . col('.') . 'c.') == '"' ? '<right>' : '""<left>'
+inoremap <expr> ' matchstr(getline('.'), '\%' . col('.') . 'c.') == "'" ? '<right>' : "''<left>"
+
 
 " Surround highlighted with token
 vnoremap <leader>" <esc>`<i"<esc>`>la"<esc>

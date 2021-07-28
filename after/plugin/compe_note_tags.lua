@@ -1,4 +1,4 @@
-local compe = require'compe'
+-- local compe = require'compe'
 local source = {}
 function source.get_metadata(self)
     return {
@@ -13,7 +13,7 @@ function source.determine(self, context)
 end
 
 function source.complete(self, context)
-    local cmd = [[rg -r '$1' --no-heading -Io -- "tags:(.*\w+)" ' .. g.notes_home .. ' | sed "s/ /\n/g" | sort -u | sed "/^$/d" || true]]
+    local cmd = [[rg -r '$1' --no-heading -Io -- "tags:(.*\w+)" ]] .. g.notes_home .. [[ | sed "s/ /\n/g" | sort -u | sed "/^$/d" || true]]
     local note_tags = fn.split(fn.system(cmd), '\n')
     context.callback({items = fn.map(note_tags, "{'word' : v:val}")})
 end
