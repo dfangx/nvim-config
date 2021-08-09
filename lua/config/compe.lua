@@ -14,7 +14,7 @@ compe.setup {
     max_menu_width = 100;
     documentation = true;
     source = {
-        vsnip = {
+        luasnip = {
             priority = 10
         };
         nvim_lsp = {

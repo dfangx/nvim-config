@@ -1,5 +1,3 @@
-require('utils')
-
 if fn.empty(fn.glob(install_path)) > 0 then
     local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
     fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
@@ -12,10 +10,11 @@ return require('packer').startup(function()
     use {'wbthomason/packer.nvim'}
     use {
         'kabouzeid/nvim-lspinstall',
+        requires = 'neovim/nvim-lspconfig'
     }
     use {
         'neovim/nvim-lspconfig',
-        config = [[require'config.lsp']],
+        config = [[require'config.lsp']]
     }
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -36,19 +35,12 @@ return require('packer').startup(function()
     }
     use {
         'hrsh7th/vim-vsnip',
+        disable = true,
         config = [[require'config.vsnip']]
     }
     use {
         'arcticicestudio/nord-vim',
         config = [[require'config.nord']]
-    }
-    use {
-        'SidOfc/mkdx',
-        -- ft = {'markdown'},
-        config = [[require'config.mkdx']]
-        -- config = function() 
-        --     vim.fn['plugins#SetupMkdx']()
-        -- end
     }
     use {
         'preservim/vim-pencil',
@@ -57,8 +49,7 @@ return require('packer').startup(function()
     }
     use {
         'junegunn/goyo.vim',
-        ft = {'markdown'},
-        config = [[vim.cmd(Goyo)]]
+        cmd = 'Goyo'
     }
     use {
         'junegunn/fzf.vim',
@@ -66,11 +57,36 @@ return require('packer').startup(function()
     }
     use {
         'christoomey/vim-tmux-navigator' ,
-        cond = 'vim.env.TMUX ~= nil'
+        cond = 'vim.env.TMUX'
     }
     use {
         'lervag/vimtex',
         ft = {'tex'},
         config = [[require'config.vimtex']]
+    }
+    use {
+        'L3MON4D3/LuaSnip',
+        config = [[require'config.luasnip']]
+    }
+    use {
+        'dfangx/friendly-snippets'
+    }
+    use {
+        'habamax/vim-godot',
+        ft = {'gdscript', 'gdresource'},
+        config = [[require'config.godot']]
+    }
+    use {
+        'plasticboy/vim-markdown',
+        config = [[require'config.markdown']]
+    }
+    use {
+        'vhyrro/neorg'
+    }
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim'},
+        config = [[require'config.telescope']],
+        cmd = 'Telescope'
     }
 end)

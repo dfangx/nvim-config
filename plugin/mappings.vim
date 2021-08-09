@@ -36,7 +36,7 @@ inoremap <expr> ' matchstr(getline('.'), '\%' . col('.') . 'c.') == "'" ? '<righ
 vnoremap <leader>" <esc>`<i"<esc>`>la"<esc>
 vnoremap <leader>' <esc>`<i'<esc>`>la'<esc>
 vnoremap <leader>( <esc>`<i(<esc>`>la)<esc>
-vnoremap <leader>[ <esc>`<i[<esc>`>la]<esc>
+"vnoremap <leader>[ <esc>`<i[<esc>`>la]<esc>
 vnoremap <leader>{ <esc>`<i{<esc>`>la}<esc>
 vnoremap <leader>< <esc>`<i<<esc>`>la><esc>
 
@@ -72,12 +72,10 @@ nnoremap [c :cprevious<cr>
 nnoremap <leader>co :copen<cr>
 nnoremap <leader>cc :cclose<cr>
 
-command W w
-command Q q
-command Gco :!fzf-git co
-
 " Notes mappings
 nnoremap <leader>nn :NewNote 
 nnoremap <leader>ns :SearchNotes <cr>
 nnoremap <leader>nt :SearchNotesByTag <cr>
 nnoremap <leader>nl :LinkNote <cr>
+
+

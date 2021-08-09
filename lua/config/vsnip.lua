@@ -1,7 +1,7 @@
 g.vsnip_filetypes = {
     cpp = '["c"]'
 }
-g.vsnip_snippet_dir = fn.expand('~/.config/nvim/snippets/vsnip')
+-- g.vsnip_snippet_dir = fn.expand('~/.config/nvim/snippets/vsnip')
 
 local opts = {
     expr = true

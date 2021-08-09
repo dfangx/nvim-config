@@ -1,4 +1,3 @@
-require'utils'
 g.fzf_colors = {
     fg= {'fg', 'Normal'},
     bg= {'bg', 'Normal'},
@@ -15,7 +14,7 @@ g.fzf_colors = {
     header = {'fg', 'Comment'}
 }
 g.fzf_layout = {
-    down = '~70%'
+    down = '~50%'
 }
 g.fzf_preview_window = {'up:wrap:70%'}
 nnoremap('<leader>ff', ':Files<cr>', {})

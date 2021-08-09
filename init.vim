@@ -9,3 +9,5 @@ let g:netrw_banner = 0
 let g:netrw_altv = 1
 
 nnoremap <leader>e :Lexplore<cr>
+
+lua require'utils'
