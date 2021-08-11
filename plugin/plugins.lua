@@ -31,12 +31,14 @@ return require('packer').startup(function()
     }
     use {
         'ibhagwan/fzf-lua',
-        requires = 'vijaymarupudi/nvim-fzf'
-    }
-    use {
-        'hrsh7th/vim-vsnip',
-        disable = true,
-        config = [[require'config.vsnip']]
+        requires = {
+            'vijaymarupudi/nvim-fzf', 
+            {
+                'junegunn/fzf', 
+                run = './install --bin'
+            }
+        },
+        config = [[require'config.fzf']]
     }
     use {
         'arcticicestudio/nord-vim',
@@ -50,10 +52,6 @@ return require('packer').startup(function()
     use {
         'junegunn/goyo.vim',
         cmd = 'Goyo'
-    }
-    use {
-        'junegunn/fzf.vim',
-        config = [[require'config.fzf']]
     }
     use {
         'christoomey/vim-tmux-navigator' ,

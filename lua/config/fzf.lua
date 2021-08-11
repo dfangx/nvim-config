@@ -1,29 +1,20 @@
-g.fzf_colors = {
-    fg= {'fg', 'Normal'},
-    bg= {'bg', 'Normal'},
-    hl= {'fg', 'Comment'},
-    fg= {'fg', 'CursorLine', 'CursorColumn', 'Normal'},
-    ['bg+'] = {'bg', 'CursorLine', 'CursorColumn'},
-    ['hl+'] = {'fg', 'Statement'},
-    info = {'fg', 'PreProc'},
-    border = {'fg', 'Ignore'},
-    prompt = {'fg', 'Conditional'},
-    pointer = {'fg', 'Exception'},
-    marker = {'fg', 'Keyword'},
-    spinner = {'fg', 'Label'},
-    header = {'fg', 'Comment'}
+fzf = require'fzf-lua'
+actions = require'fzf-lua.actions'
+
+fzf.setup {
+    winopts = {
+        split = 'new',
+        win_height = 0.5
+    },
+    fzf_layout = 'default',
+    preview_vertical = 'up:70%',
+    preview_wrap = 'wrap'
 }
-g.fzf_layout = {
-    down = '~50%'
-}
-g.fzf_preview_window = {'up:wrap:70%'}
-nnoremap('<leader>ff', ':Files<cr>', {})
-nnoremap('<leader>fs', [[:call fzf#run(fzf#wrap({'sink': 'split'}))<cr>]], {})
-nnoremap('<leader>fv', [[:call fzf#run(fzf#wrap({'sink': 'vert split'}))<cr>]], {})
-nnoremap('<leader>ft', [[:call fzf#run(fzf#wrap({'sink': 'tabedit'}))<cr>]], {})
-nnoremap('<leader>fg', ':GFiles<cr>', {})
-nnoremap('<leader>b', ':Buffers<cr>', {})
-nnoremap('<leader>/', ':Rg<cr>', {})
-inoremap('<c-x><c-f>', [[fzf#vim#complete#path("fd", {"options":["--select-1", "--preview", "tree {}"]})]], {expr = true})
-imap('<c-x><c-l>', '<plug>(fzf-complete-line)', {})
-imap('<c-x><c-k>', '<plug>(fzf-complete-word)', {})
+local opts = {}
+nnoremap('<leader>ff', ':FzfLua files<cr>', opts)
+nnoremap('<leader>fs', ':lua fzf.files({actions = {["default"] = actions.file_split}})<cr>', opts)
+nnoremap('<leader>fv', ':lua fzf.files({actions = {["default"] = actions.file_vsplit}})<cr>', opts)
+nnoremap('<leader>ft', ':lua fzf.files({actions = {["default"] = actions.file_tabedit}})<cr>', opts)
+nnoremap('<leader>fg', ':FzfLua git_files<cr>', opts)
+nnoremap('<leader>b', ':FzfLua buffers<cr>', opts)
+nnoremap('<leader>/', ':FzfLua live_grep<cr>', opts)
