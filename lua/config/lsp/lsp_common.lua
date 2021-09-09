@@ -20,7 +20,8 @@ on_attach = function(client)
 
     local opts = { silent = true }
     buf_nnoremap('gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    buf_nnoremap('gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_nnoremap('gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+    buf_nnoremap('gc', '<cmd>lua vim.lsp.buf.incoming_calls()<cr>', opts)
     buf_nnoremap('K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_nnoremap('gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     buf_nnoremap('<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
