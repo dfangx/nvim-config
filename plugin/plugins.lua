@@ -27,7 +27,18 @@ return require('packer').startup(function()
     }
     use {
         'hrsh7th/nvim-compe',
+        disable = true,
         config = [[require'config.compe']]
+    }
+    use {
+        'hrsh7th/nvim-cmp',
+        config = [[require'config.cmp']],
+        requires = {
+            'hrsh7th/cmp-nvim-lsp',
+            'saadparwaiz1/cmp_luasnip',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-nvim-lua',
+        }
     }
     use {
         'ibhagwan/fzf-lua',
