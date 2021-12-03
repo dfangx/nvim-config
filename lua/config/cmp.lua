@@ -6,9 +6,9 @@ cmp.setup({
         end
     },
     mapping = {
-        ['<cr>'] = cmp.mapping.confirm({select = true}),
-        ['<tab>'] = cmp.mapping.select_next_item(),
-        ['<s-tab>'] = cmp.mapping.select_prev_item(),
+        ['<CR>'] = cmp.mapping.confirm({select = false}),
+        ['<TAB>'] = cmp.mapping.select_next_item(),
+        ['<S-TAB>'] = cmp.mapping.select_prev_item(),
     },
     sources = {
         { name = 'luasnip' },
@@ -16,5 +16,6 @@ cmp.setup({
         { name = 'path' },
         { name = 'note_tags'},
         { name = 'nvim_lua' },
+        { name = "neorg" }
     }
 })

@@ -9,7 +9,7 @@ vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
 return require('packer').startup(function()
     use {'wbthomason/packer.nvim'}
     use {
-        'kabouzeid/nvim-lspinstall',
+        'williamboman/nvim-lsp-installer',
         requires = 'neovim/nvim-lspconfig'
     }
     use {
@@ -22,13 +22,8 @@ return require('packer').startup(function()
     }
     use {
         'mfussenegger/nvim-lint',
-        ft = {'sh', 'vim'},
+        ft = {'sh'},
         config = [[require'config.lint']]
-    }
-    use {
-        'hrsh7th/nvim-compe',
-        disable = true,
-        config = [[require'config.compe']]
     }
     use {
         'hrsh7th/nvim-cmp',
@@ -57,7 +52,7 @@ return require('packer').startup(function()
     }
     use {
         'preservim/vim-pencil',
-        ft = {'markdown'},
+        ft = {'markdown', 'norg'},
         config = [[require'config.pencil']]
     }
     use {
@@ -90,12 +85,13 @@ return require('packer').startup(function()
         config = [[require'config.markdown']]
     }
     use {
-        'vhyrro/neorg'
+        'vhyrro/neorg',
+        requires = 'nvim-lua/plenary.nvim',
+        branch = 'unstable',
+        config = [[require'config.neorg']]
     }
     use {
-        'nvim-telescope/telescope.nvim',
-        requires = {'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim'},
-        config = [[require'config.telescope']],
-        cmd = 'Telescope'
+        'ledger/vim-ledger',
+        ft = {'ledger'}
     }
 end)
