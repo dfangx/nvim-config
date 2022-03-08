@@ -3,12 +3,6 @@ function! notes#CreateNote(dir) abort
 endfunction
 
 function! notes#SearchNotes(query, fullscreen) abort
-    function! Open(sel) abort
-        let l:list = filter(flatten(map(a:sel, 'split(v:val, ":")')), 'filereadable(v:val)')
-        for f in l:list
-            execute 'e' f
-        endfor
-    endfunction
     let cmd = 'rg --no-heading --smart-case --line-number --column --color=always -- %s ' . g:notes_home . ' || true'
 
     let initial = printf(cmd, shellescape(a:query))

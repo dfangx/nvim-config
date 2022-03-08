@@ -18,3 +18,5 @@ nnoremap('<leader>ft', ':lua fzf.files({actions = {["default"] = actions.file_ta
 nnoremap('<leader>fg', ':FzfLua git_files<cr>', opts)
 nnoremap('<leader>b', ':FzfLua buffers<cr>', opts)
 nnoremap('<leader>/', ':FzfLua live_grep<cr>', opts)
+
+require'notes'

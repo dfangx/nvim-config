@@ -9,6 +9,7 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({select = false}),
         ['<TAB>'] = cmp.mapping.select_next_item(),
         ['<S-TAB>'] = cmp.mapping.select_prev_item(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = {
         { name = 'luasnip' },

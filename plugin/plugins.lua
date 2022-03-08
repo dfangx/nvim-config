@@ -87,7 +87,6 @@ return require('packer').startup(function()
     use {
         'vhyrro/neorg',
         requires = 'nvim-lua/plenary.nvim',
-        branch = 'unstable',
         config = [[require'config.neorg']]
     }
     use {
