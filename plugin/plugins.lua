@@ -93,4 +93,8 @@ return require('packer').startup(function()
         'ledger/vim-ledger',
         ft = {'ledger'}
     }
+    use {
+        'm-pilia/vim-ccls',
+        requires = 'neovim/nvim-lspconfig'
+    }
 end)

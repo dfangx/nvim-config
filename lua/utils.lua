@@ -27,7 +27,7 @@ end
 
 function buf_nnoremap(key, cmd, opts) 
     opts.noremap = true;
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', key, cmd, opts)
+    vim.api.nvim_buf_set_keymap(0, 'n', key, cmd, opts)
 end
 
 execute = vim.api.nvim_command

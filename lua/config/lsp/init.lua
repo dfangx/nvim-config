@@ -22,5 +22,20 @@ lsp_installer.on_server_ready(function(server)
             debounce_text_changes = 150
         }
     end
+    if server.name == 'ccls' then
+        opts.on_attach = function (client)
+            on_attach(client)
+            local keyOpts = {silent = true}
+            buf_nnoremap('gc', '<cmd>CclsCallers<cr>', keyOpts)
+            buf_nnoremap('<leader>ch', '<cmd>CclsCallHierarchy<cr>', keyOpts)
+            buf_nnoremap('gC', '<cmd>CclsCallees<cr>', keyOpts)
+            buf_nnoremap('<leader>Ch', '<cmd>CclsCalleeHierarchy<cr>', keyOpts)
+        end
+        opts.init_options = {
+            cache = {
+                directory = "/home/cyrusng/.cache/ccls"
+            }
+        }
+    end
     server:setup(opts)
 end)
