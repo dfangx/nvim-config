@@ -33,6 +33,8 @@ return require('packer').startup(function()
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-nvim-lua',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-cmdline',
         }
     }
     use {
@@ -96,5 +98,9 @@ return require('packer').startup(function()
     use {
         'm-pilia/vim-ccls',
         requires = 'neovim/nvim-lspconfig'
+    }
+    use {
+        'mfussenegger/nvim-dap',
+        config = [[require'config.dap']]
     }
 end)
