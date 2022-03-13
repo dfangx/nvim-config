@@ -15,8 +15,8 @@ nnoremap <leader>o o<esc>
 " Buffer management
 nnoremap ]b :bn<cr>
 nnoremap [b :bp<cr>
-nnoremap <leader>b :ls<cr>:b
-nnoremap <leader>d :bd<cr>
+nnoremap <leader>bb :ls<cr>:b
+nnoremap <leader>bd :bd<cr>
 
 " Surround
 inoremap ( ()<left>

@@ -1,3 +1,45 @@
-treesitter = require'nvim-treesitter.configs'
-vim.api.nvim_set_option("foldmethod", "expr")
-vim.api.nvim_set_option("foldexpr", "nvim_treesitter#foldexpr()")
+local treesitter = require'nvim-treesitter.configs'
+local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
+
+parser_configs.norg_meta = {
+    install_info = {
+        url = "https://github.com/nvim-neorg/tree-sitter-norg-meta",
+        files = { "src/parser.c" },
+        branch = "main"
+    },
+}
+
+parser_configs.norg_table = {
+    install_info = {
+        url = "https://github.com/nvim-neorg/tree-sitter-norg-table",
+        files = { "src/parser.c" },
+        branch = "main"
+    },
+}
+
+treesitter.setup {
+    ensure_installed = {
+        "bash",
+        "c",
+        "cpp",
+        "lua",
+        "norg",
+        "norg_meta",
+        "norg_table",
+        "python",
+        "rust",
+        "toml",
+        "vim",
+        "yaml",
+        "zig",
+    },
+    highlight = {
+        enable = true
+    },
+    indent = {
+        enable = true
+    }
+}
+
+o.foldmethod = 'expr'
+o.foldexpr = 'nvim_treesitter#foldexpr()'

@@ -1,4 +1,5 @@
-local dap = require('dap')
+dap = require('dap')
+
 dap.adapters.lldb = {
     type = 'executable',
     command = '/usr/bin/lldb-vscode', -- adjust as needed
@@ -32,3 +33,13 @@ dap.configurations.cpp = {
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
 dap.configurations.zig = dap.configurations.cpp
+
+local opts = { silent = true }
+nnoremap('<leader>db', '<cmd>lua dap.toggle_breakpoint()<cr>', opts)
+nnoremap('<leader>dc', '<cmd>lua dap.continue()<cr>', opts)
+nnoremap('<leader>ds', '<cmd>lua dap.step_over()<cr>', opts)
+nnoremap('<leader>dS', '<cmd>lua dap.step_into()<cr>', opts)
+nnoremap('<leader>dr', '<cmd>lua dap.repl.open()<cr>', opts)
+nnoremap('<leader>dk', '<cmd>lua dap.up()<cr>', opts)
+nnoremap('<leader>dj', '<cmd>lua dap.down()<cr>', opts)
+nnoremap('<leader>di', '<cmd>lua require"dap.ui.widgets".hover()<cr>', opts)
