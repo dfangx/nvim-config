@@ -83,7 +83,7 @@ return require('packer').startup(function()
         config = [[require'config.godot']]
     }
     use {
-        'plasticboy/vim-markdown',
+        'preservim/vim-markdown',
         config = [[require'config.markdown']]
     }
     use {
