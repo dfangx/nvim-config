@@ -36,9 +36,6 @@ treesitter.setup {
     highlight = {
         enable = true
     },
-    indent = {
-        enable = true
-    }
 }
 
 o.foldmethod = 'expr'

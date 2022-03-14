@@ -35,5 +35,5 @@ on_attach = function(client)
     buf_nnoremap('[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
     buf_nnoremap(']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
     buf_nnoremap('<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-    buf_nnoremap('<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+    buf_nnoremap('ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 end
