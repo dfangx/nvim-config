@@ -1,7 +1,6 @@
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-    fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-    execute 'packadd packer.nvim'
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
 vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
