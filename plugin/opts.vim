@@ -36,6 +36,7 @@ set guicursor=
 set spellfile=$XDG_CONFIG_HOME/nvim/spell/en.utf8.add
 set ignorecase
 set smartcase
+set mouse=
 
 let g:tex_flavor='latex'
 let g:netrw_browsex_viewer="xdg-open"

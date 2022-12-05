@@ -86,7 +86,7 @@ return require('packer').startup(function()
         config = [[require'config.markdown']]
     }
     use {
-        'vhyrro/neorg',
+        'nvim-neorg/neorg',
         requires = 'nvim-lua/plenary.nvim',
         config = [[require'config.neorg']]
     }
@@ -101,5 +101,8 @@ return require('packer').startup(function()
     use {
         'mfussenegger/nvim-dap',
         config = [[require'config.dap']]
+    }
+    use {
+        'tikhomirov/vim-glsl',
     }
 end)

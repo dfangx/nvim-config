@@ -25,16 +25,16 @@ require('neorg').setup {
             }
         }
     },
-    hook = function()
-        local neorg_leader = "<Leader>"
-        local neorg_callbacks = require('neorg.callbacks')
-        neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, keybinds)
-            keybinds.map_event_to_mode("norg", {
-                n = {
-                { "gi", "core.gtd.base.add_to_inbox" },
-            },
-        }, { silent = true, noremap = true })
-
-    end)
-end
+--     hook = function()
+--         local neorg_leader = "<Leader>"
+--         local neorg_callbacks = require('neorg.callbacks')
+--         neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, keybinds)
+--             keybinds.map_event_to_mode("norg", {
+--                 n = {
+--                 { "gi", "core.gtd.base.add_to_inbox" },
+--             },
+--         }, { silent = true, noremap = true })
+-- 
+--     end)
+-- end
 }
